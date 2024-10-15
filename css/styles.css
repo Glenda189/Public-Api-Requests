@@ -257,3 +257,39 @@ header h1 {
         color: rgba(25, 25, 25, 1); 
     }
 }
+
+/* ===================================== 
+   Search feature
+======================================== */
+/*Search container styles 
+.search-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+/* Search input styles
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+/* Search button 
+.search-submit {
+    font-size: 20px;
+    padding: 10px;
+    background-color: #333;
+    color:white;
+    border:none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-submit:hover {
+    background-color: #555;
+}
+*/

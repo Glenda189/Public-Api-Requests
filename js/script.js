@@ -3,9 +3,9 @@ const gallery = document.getElementById('gallery');
 
 //fetch 12 random users 
 fetch('https://randomuser.me/api/?results=12')
-.then (response => response.json()) // used promise to convert to JSON or parse the JSON response
+.then (response => response.json()) // used promise and arrow method  to convert to JSON or parse the JSON response
 .then(data => displayUsers(data.results)) //again used promise to pass the data to a function to display users 
-.catch (error => console.error('Error fetching data:', error)); // used .catch method to handle rejected promises and errors
+.catch (error => console.log('Looks like there was a problem!', error)); // used .catch method to handle rejected promises and errors
 //function to display users 
 function displayUsers(users){
     users.forEach((user,index) =>{
@@ -39,9 +39,50 @@ cards.forEach(card => {
 function openModal(user){
     const modalHTML = `<div class = "modal-container">
     <div class = "modal">
-        <button type= "button" id="modal-close-btn" class = "modal-close-btn"><strong>X</strong> </button>
+        <button type= "button" id="modal-close-btn" class = "modal-close-btn"><strong>X</strong></button>
         <div class="modal-info-container">
         <img class = "modal-img" src = "${user.picture.large}" alt="profile picture">
-        // 
-        `
+        <h3 id="name" class = "modal-name cap">${user.name.first} ${user.name.last}</h3>
+        <p class = "modal-text"> ${user.email}</p>
+        <p class = "modal-tex cap"> ${user.location.city}</p>
+        <hr>
+        <p class = "modal-text">${user.cell}</p>
+        <p class = "modal-text"> ${user.location.street.number} ${user.location.street.name}, ${user.location.state},${user.location.postcode}</p>
+        <p class = "modal-text">Birthday: ${new Date (user.dob.date).toLocaleDateString()}</p>
+        </div>
+    </div>
+    </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+//close the modal when "X" is clicked
+document.getElementById('modal-close-btn').addEventListener('click', () => {
+    document.querySelector('.modal-container').remove();
+});
+
+//close modal when clicking outside of it 
+window.addEventListener('click', (event) => {
+    const modalContainer = document.querySelector('.modal-container');
+    if (event.target === modalContainer) {
+        modalContainer.remove();
+    }
+});
+
+
+//search functionality 
+// const searchInput = document.getElementById('search-input');
+// searchInput.addEventListener('keyup', () => {
+//     const searchTerm = searchInput.value.toLowerCase();
+//     const cards = document.querySelectorAll('.card');
+
+//     cards.forEach(card => {
+//         const name = card.querySelector('.card-name').textContent.toLowerCase();
+//         if (name.includes(searchTerm)) {
+//             card.computedStyleMap.display = ''; 
+//         } else {
+//             card.computedStyleMap.display = "none";
+//         }
+//     });
+// });
+
 }
