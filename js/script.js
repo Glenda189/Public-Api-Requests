@@ -67,22 +67,7 @@ window.addEventListener('click', (event) => {
         modalContainer.remove();
     }
 });
-
-
-//search functionality 
-// const searchInput = document.getElementById('search-input');
-// searchInput.addEventListener('keyup', () => {
-//     const searchTerm = searchInput.value.toLowerCase();
-//     const cards = document.querySelectorAll('.card');
-
-//     cards.forEach(card => {
-//         const name = card.querySelector('.card-name').textContent.toLowerCase();
-//         if (name.includes(searchTerm)) {
-//             card.computedStyleMap.display = ''; 
-//         } else {
-//             card.computedStyleMap.display = "none";
-//         }
-//     });
-// });
-
 }
+
+// search functionality 
+// https://github.com/Glenda189/Public-Api-Requests
