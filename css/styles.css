@@ -261,14 +261,14 @@ header h1 {
 /* ===================================== 
    Search feature
 ======================================== */
-/*Search container styles 
+/*Search container styles */
 .search-container{
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
 }
 
-/* Search input styles
+/* Search input styles */
 .search-input {
     padding: 10px;
     font-size: 16px;
@@ -278,7 +278,7 @@ header h1 {
     margin-right: 10px;
 }
 
-/* Search button 
+/* Search button */
 .search-submit {
     font-size: 20px;
     padding: 10px;
@@ -292,4 +292,3 @@ header h1 {
 .search-submit:hover {
     background-color: #555;
 }
-*/

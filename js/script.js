@@ -1,9 +1,10 @@
 
 const gallery = document.getElementById('gallery');
 
+// reference fetch video
 //fetch 12 random users 
 fetch('https://randomuser.me/api/?results=12')
-.then (response => response.json()) // used promise and arrow method  to convert to JSON or parse the JSON response
+.then (response => response.json()) // used promise and arrow method to convert to JSON or parse the JSON response
 .then(data => displayUsers(data.results)) //again used promise to pass the data to a function to display users 
 .catch (error => console.log('Looks like there was a problem!', error)); // used .catch method to handle rejected promises and errors
 //function to display users 
@@ -22,9 +23,6 @@ function displayUsers(users){
     </div>`;
     gallery.insertAdjacentHTML('beforeend',userCard);
     });
-// using fetch video
-
-//Creating the Modal Window
 
 // //add event listeners to user cards for opening the modal
 const cards = document.querySelectorAll('.card');
@@ -35,6 +33,7 @@ cards.forEach(card => {
     });
 });
 }
+// *
 //function to create and display the modal
 function openModal(user){
     const modalHTML = `<div class = "modal-container">
@@ -67,21 +66,32 @@ window.addEventListener('click', (event) => {
         modalContainer.remove();
     }
 });
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // search functionality 
-// const searchInput = document.getElementById('search-input');
-// searchInput.addEventListener('keyup', () => {
-//     const searchTerm = searchInput.value.toLowerCase();
-//     const cards = document.querySelectorAll('.card');
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('keyup', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
 
-//     cards.forEach(card => {
-//         const name = card.querySelector('.card-name').textContent.toLowerCase();
-//         if (name.includes(searchTerm)) {
-//             card.computedStyleMap.display = ''; 
-//         } else {
-//             card.computedStyleMap.display = "none";
-//         }
-//     });
-// });
-
+    cards.forEach(card => {
+        const name = card.querySelector('.card-name').textContent.toLowerCase();
+        if (name.includes(searchTerm)) {
+            card.style.display = ''; 
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
+}
